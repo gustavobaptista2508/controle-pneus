@@ -1,0 +1,12 @@
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\bin\Debug\bdPneus.mdf
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\bin\Debug\bdPneus_log.ldf
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\bin\Debug\Controle de Pneus.exe.config
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\bin\Debug\Controle de Pneus.exe
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\bin\Debug\Controle de Pneus.pdb
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\obj\Debug\Controle de Pneus.csproj.AssemblyReference.cache
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\obj\Debug\Controle_de_Pneus.Form1.resources
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\obj\Debug\Controle_de_Pneus.Properties.Resources.resources
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\obj\Debug\Controle de Pneus.csproj.GenerateResource.cache
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\obj\Debug\Controle de Pneus.csproj.CoreCompileInputs.cache
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\obj\Debug\Controle de Pneus.exe
+C:\Users\gusta\OneDrive\Documentos\Projetos\Controle de Pneus\Controle de Pneus\obj\Debug\Controle de Pneus.pdb

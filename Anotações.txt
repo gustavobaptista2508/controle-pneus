@@ -1,0 +1,24 @@
+﻿private void PopulaCombo()
+        {
+            var diagrama = new dsPneusTableAdapters.DiagramaPneusTableAdapter();
+            comboBox1.ValueMember = "IdDiagrama";
+            comboBox1.DisplayMember = "Descricao";
+            comboBox1.DataSource = diagrama.GetData();
+        }
+
+
+        CREATE TABLE [dbo].[Pneu] (
+    [NumFogo]     INT          NOT NULL,
+    [MarcaId]       INT  NOT NULL,
+    [ModeloId]      INT  NOT NULL,
+    [StatusId]    INT          NOT NULL,
+    [KmPneu]      INT          NOT NULL,
+    [DataEntrada] DATE         NOT NULL,
+    [LocalId]     INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([NumFogo] ASC),
+    FOREIGN KEY ([StatusId]) REFERENCES [dbo].[StatusPneu] ([IdStatus]),
+    FOREIGN KEY ([LocalId]) REFERENCES [dbo].[Locais] ([IdLocal]),
+	FOREIGN KEY ([MarcaId]) REFERENCES [dbo].[Marca] ([IdMarca]),
+	FOREIGN KEY ([ModeloId]) REFERENCES [dbo].[ModeloPneu] ([IdModelo])
+);
+
