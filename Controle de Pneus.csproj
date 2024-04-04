@@ -69,16 +69,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPneus.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="formCadPneus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="formCadPneus.Designer.cs">
+      <DependentUpon>formCadPneus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formHistoricoPneu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formHistoricoPneu.Designer.cs">
+      <DependentUpon>formHistoricoPneu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formListagemPneus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formListagemPneus.Designer.cs">
+      <DependentUpon>formListagemPneus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPrincipal.Designer.cs">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="formCadPneus.resx">
+      <DependentUpon>formCadPneus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formHistoricoPneu.resx">
+      <DependentUpon>formHistoricoPneu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formListagemPneus.resx">
+      <DependentUpon>formListagemPneus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPrincipal.resx">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,6 +115,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="dsPneus.xsc">
       <DependentUpon>dsPneus.xsd</DependentUpon>
@@ -121,6 +149,24 @@
     <Content Include="bdPneus_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\11230177_copy_clipboard_icon20px.png" />
+    <None Include="Resources\48014_tire_tyre_wheel_icon.png" />
+    <None Include="Resources\33997_wheel_icon32px.png" />
+    <None Include="Resources\33997_wheel_icon24px.png" />
+    <None Include="Resources\33997_wheel_icon14px.png" />
+    <None Include="Resources\11230174_documet_add_file_icon16px.png" />
+    <None Include="Resources\11230174_documet_add_file_icon20px.png" />
+    <None Include="Resources\3669134_find_in_page_ic_icon.png" />
+    <None Include="Resources\1988878_front_lorry_truck_vehicle_icon.png" />
+    <None Include="Resources\1622833_checkmark_done_exam_list_pencil_icon16.png" />
+    <None Include="Resources\1622833_checkmark_done_exam_list_pencil_icon1.png" />
+    <None Include="Resources\1622833_checkmark_done_exam_list_pencil_icon.png" />
+    <None Include="Resources\9042329_check_circled_outline_icon.png" />
+    <None Include="Resources\9004700_tick_check_mark_accept_icon.png" />
+    <None Include="Resources\9042362_db_check_icon.png" />
+    <None Include="Resources\9042182_db_error_icon.png" />
+    <None Include="Resources\6586148_accept_check_good_mark_ok_icon.png" />
+    <None Include="Resources\2849810_cross_multimedia_error_delite_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

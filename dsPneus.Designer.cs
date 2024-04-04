@@ -9780,12 +9780,100 @@ SELECT NumFogo, MarcaId, ModeloId, StatusId, KmPneu, DataEntrada, LocalId FROM P
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NumFogo, MarcaId, ModeloId, StatusId, KmPneu, DataEntrada, LocalId FROM db" +
                 "o.Pneu";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Pneu.NumFogo, Pneu.KmPneu, Pneu.DataEntrada, Locais.Descricao, Marca.DescricaoMarca, StatusPneu.Descricao AS StatusPneu, ModeloPneu.DescricaoModelo, Pneu.MarcaId, Pneu.ModeloId, Pneu.StatusId, Pneu.LocalId
+FROM     Pneu INNER JOIN
+                  Locais ON Pneu.LocalId = Locais.IdLocal INNER JOIN
+                  Marca ON Pneu.MarcaId = Marca.IdMarca INNER JOIN
+                  ModeloPneu ON Pneu.ModeloId = ModeloPneu.IdModelo AND Marca.IdMarca = ModeloPneu.MarcaId INNER JOIN
+                  StatusPneu ON Pneu.StatusId = StatusPneu.IdStatus";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT Pneu.NumFogo, Pneu.KmPneu, Pneu.DataEntrada, Locais.Descricao, Marca.DescricaoMarca, StatusPneu.Descricao AS StatusPneu, ModeloPneu.DescricaoModelo, Pneu.MarcaId, Pneu.ModeloId, Pneu.StatusId, Pneu.LocalId
+FROM     Pneu INNER JOIN
+                  Locais ON Pneu.LocalId = Locais.IdLocal INNER JOIN
+                  Marca ON Pneu.MarcaId = Marca.IdMarca INNER JOIN
+                  ModeloPneu ON Pneu.ModeloId = ModeloPneu.IdModelo AND Marca.IdMarca = ModeloPneu.MarcaId INNER JOIN
+                  StatusPneu ON Pneu.StatusId = StatusPneu.IdStatus
+WHERE  (Pneu.ModeloId = @ModeloId) AND (Pneu.MarcaId = @MarcaId) AND (Pneu.StatusId = @StatusId) AND (Pneu.LocalId = @LocalId)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModeloId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ModeloId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarcaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MarcaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocalId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LocalId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT Pneu.NumFogo, Pneu.KmPneu, Pneu.DataEntrada, Locais.Descricao, Marca.DescricaoMarca, StatusPneu.Descricao AS StatusPneu, ModeloPneu.DescricaoModelo, Pneu.MarcaId, Pneu.ModeloId, Pneu.StatusId, Pneu.LocalId
+FROM     Pneu INNER JOIN
+                  Locais ON Pneu.LocalId = Locais.IdLocal INNER JOIN
+                  Marca ON Pneu.MarcaId = Marca.IdMarca INNER JOIN
+                  ModeloPneu ON Pneu.ModeloId = ModeloPneu.IdModelo AND Marca.IdMarca = ModeloPneu.MarcaId INNER JOIN
+                  StatusPneu ON Pneu.StatusId = StatusPneu.IdStatus
+WHERE  (Pneu.ModeloId = @ModeloId) AND (Pneu.MarcaId = @MarcaId) AND (Pneu.StatusId = @StatusId) AND (Pneu.LocalId = @LocalId)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModeloId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ModeloId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarcaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MarcaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocalId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LocalId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT Pneu.NumFogo, Pneu.KmPneu, Pneu.DataEntrada, Locais.Descricao, Marca.DescricaoMarca, StatusPneu.Descricao AS StatusPneu, ModeloPneu.DescricaoModelo, Pneu.MarcaId, Pneu.ModeloId, Pneu.StatusId, Pneu.LocalId
+FROM     Pneu INNER JOIN
+                  Locais ON Pneu.LocalId = Locais.IdLocal INNER JOIN
+                  Marca ON Pneu.MarcaId = Marca.IdMarca INNER JOIN
+                  ModeloPneu ON Pneu.ModeloId = ModeloPneu.IdModelo AND Marca.IdMarca = ModeloPneu.MarcaId INNER JOIN
+                  StatusPneu ON Pneu.StatusId = StatusPneu.IdStatus
+WHERE  (Pneu.ModeloId = @ModeloId) AND (Pneu.MarcaId = @MarcaId) AND (Pneu.StatusId = @StatusId) AND (Pneu.LocalId = @LocalId)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModeloId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ModeloId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarcaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MarcaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocalId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LocalId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT Pneu.NumFogo, Pneu.KmPneu, Pneu.DataEntrada, Locais.Descricao, Marca.DescricaoMarca, StatusPneu.Descricao AS StatusPneu, ModeloPneu.DescricaoModelo, Pneu.MarcaId, Pneu.ModeloId, Pneu.StatusId, Pneu.LocalId
+FROM     Pneu INNER JOIN
+                  Locais ON Pneu.LocalId = Locais.IdLocal INNER JOIN
+                  Marca ON Pneu.MarcaId = Marca.IdMarca INNER JOIN
+                  ModeloPneu ON Pneu.ModeloId = ModeloPneu.IdModelo AND Marca.IdMarca = ModeloPneu.MarcaId INNER JOIN
+                  StatusPneu ON Pneu.StatusId = StatusPneu.IdStatus
+WHERE  (Pneu.ModeloId = @ModeloId) AND (Pneu.MarcaId = @MarcaId) AND (Pneu.StatusId = @StatusId) AND (Pneu.LocalId = @LocalId)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModeloId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ModeloId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarcaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MarcaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocalId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LocalId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT Pneu.NumFogo, Pneu.KmPneu, Pneu.DataEntrada, Locais.Descricao, Marca.DescricaoMarca, StatusPneu.Descricao AS StatusPneu, ModeloPneu.DescricaoModelo, Pneu.MarcaId, Pneu.ModeloId, Pneu.StatusId, Pneu.LocalId
+FROM     Pneu INNER JOIN
+                  Locais ON Pneu.LocalId = Locais.IdLocal INNER JOIN
+                  Marca ON Pneu.MarcaId = Marca.IdMarca INNER JOIN
+                  ModeloPneu ON Pneu.ModeloId = ModeloPneu.IdModelo AND Marca.IdMarca = ModeloPneu.MarcaId INNER JOIN
+                  StatusPneu ON Pneu.StatusId = StatusPneu.IdStatus
+WHERE  (Pneu.NumFogo=@NumFogo)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumFogo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumFogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"INSERT INTO [dbo].[Pneu] ([NumFogo], [MarcaId], [ModeloId], [StatusId], [KmPneu], [DataEntrada], [LocalId]) VALUES (@NumFogo, @MarcaId, @ModeloId, @StatusId, @KmPneu, @DataEntrada, @LocalId);
+SELECT NumFogo, MarcaId, ModeloId, StatusId, KmPneu, DataEntrada, LocalId FROM Pneu WHERE (NumFogo = @NumFogo)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumFogo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumFogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MarcaId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MarcaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModeloId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ModeloId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StatusId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StatusId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KmPneu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "KmPneu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataEntrada", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocalId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LocalId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9807,6 +9895,184 @@ SELECT NumFogo, MarcaId, ModeloId, StatusId, KmPneu, DataEntrada, LocalId FROM P
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsPneus.PneuDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsPneus.PneuDataTable dataTable = new dsPneus.PneuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(dsPneus.PneuDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsPneus.PneuDataTable ObterListaPneus() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            dsPneus.PneuDataTable dataTable = new dsPneus.PneuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FiltrarStatus(dsPneus.PneuDataTable dataTable, int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsPneus.PneuDataTable ObterListaPorStatus(int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            dsPneus.PneuDataTable dataTable = new dsPneus.PneuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FiltroLocal(dsPneus.PneuDataTable dataTable, int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsPneus.PneuDataTable ObterListaPorLocal(int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            dsPneus.PneuDataTable dataTable = new dsPneus.PneuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FiltroMarca(dsPneus.PneuDataTable dataTable, int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsPneus.PneuDataTable ObterListaPneuPorMarca(int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            dsPneus.PneuDataTable dataTable = new dsPneus.PneuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FiltroModelo(dsPneus.PneuDataTable dataTable, int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsPneus.PneuDataTable ObterListaPorModelo(int ModeloId, int MarcaId, int StatusId, int LocalId) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ModeloId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MarcaId));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(StatusId));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(LocalId));
+            dsPneus.PneuDataTable dataTable = new dsPneus.PneuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FiltroNumFogo(dsPneus.PneuDataTable dataTable, int NumFogo) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NumFogo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsPneus.PneuDataTable ObterListaPneuPorFogo(int NumFogo) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NumFogo));
             dsPneus.PneuDataTable dataTable = new dsPneus.PneuDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9938,6 +10204,41 @@ SELECT NumFogo, MarcaId, ModeloId, StatusId, KmPneu, DataEntrada, LocalId FROM P
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int MarcaId, int ModeloId, int StatusId, int KmPneu, System.DateTime DataEntrada, int LocalId, int Original_NumFogo, int Original_MarcaId, int Original_ModeloId, int Original_StatusId, int Original_KmPneu, System.DateTime Original_DataEntrada, int Original_LocalId) {
             return this.Update(Original_NumFogo, MarcaId, ModeloId, StatusId, KmPneu, DataEntrada, LocalId, Original_NumFogo, Original_MarcaId, Original_ModeloId, Original_StatusId, Original_KmPneu, Original_DataEntrada, Original_LocalId);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertPneus(int NumFogo, int MarcaId, int ModeloId, int StatusId, int KmPneu, string DataEntrada, int LocalId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            command.Parameters[0].Value = ((int)(NumFogo));
+            command.Parameters[1].Value = ((int)(MarcaId));
+            command.Parameters[2].Value = ((int)(ModeloId));
+            command.Parameters[3].Value = ((int)(StatusId));
+            command.Parameters[4].Value = ((int)(KmPneu));
+            if ((DataEntrada == null)) {
+                throw new global::System.ArgumentNullException("DataEntrada");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(DataEntrada));
+            }
+            command.Parameters[6].Value = ((int)(LocalId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
